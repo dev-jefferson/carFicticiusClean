@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+
+    <changeSet id="1.1.01" author="jefferson.galvao">
+    	<preConditions>
+			<tableExists tableName="marcas"></tableExists>
+		</preConditions>
+		
+        <createTable schemaName="public" tableName="veiculos">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints unique="true" nullable="false"/>
+            </column>
+            <column name="nome" type="varchar(50)"/>
+            <column name="marca_id" type="bigint"/>
+            <column name="modelo" type="varchar(50)"/>
+            <column name="data_fabricacao" type="datetime" />
+            <column name="consumo_medio_cidade" type="bigint"/>
+            <column name="consumo_medio_rodovia" type="bigint"/>
+        </createTable>
+
+        <addPrimaryKey schemaName="public" tableName="veiculos" columnNames="id"/>
+		<addForeignKeyConstraint
+			constraintName="fk_marca_veiculo"
+			baseTableSchemaName="public"
+			referencedTableSchemaName="public" baseTableName="veiculos"
+			baseColumnNames="marca_id" referencedTableName="marcas"
+			referencedColumnNames="id" />
+
+    </changeSet>
+
+	<changeSet id="1.1.02" author="jefferson.galvao">
+        <insert schemaName="public" tableName="veiculos">
+            <column name="nome" value="Onix"></column>
+            <column name="marca_id" value="3"></column>
+            <column name="modelo" value="LT"></column>
+            <column name="data_fabricacao" value="2020-06-20"></column>
+            <column name="consumo_medio_cidade" value="12"></column>
+            <column name="consumo_medio_rodovia" value="16"></column>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

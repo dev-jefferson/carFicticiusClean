@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+
+	<changeSet id="1.0.01" author="jefferson.galvao">
+		<createTable schemaName="public" tableName="marcas">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints unique="true" nullable="false" />
+			</column>
+			<column name="nome" type="varchar" />
+		</createTable>
+
+		<addPrimaryKey schemaName="public" tableName="marcas" columnNames="id" />
+	</changeSet>
+
+	<changeSet id="1.0.02" author="jefferson.galvao">
+
+		<insert schemaName="public" tableName="marcas">
+			<column name="nome" value="Audi"></column>
+		</insert>
+		<insert schemaName="public" tableName="marcas">
+			<column name="nome" value="CAOA Chery"></column>
+		</insert>
+		<insert schemaName="public" tableName="marcas">
+			<column name="nome" value="Chevrolet"></column>
+		</insert>
+		<insert schemaName="public" tableName="marcas">
+			<column name="nome" value="Citroën"></column>
+		</insert>
+		<insert schemaName="public" tableName="marcas">
+			<column name="nome" value="Fiat"></column>
+		</insert>
+		<insert schemaName="public" tableName="marcas">
+			<column name="nome" value="Ford"></column>
+		</insert>
+		<insert schemaName="public" tableName="marcas">
+			<column name="nome" value="Honda"></column>
+		</insert>
+		<insert schemaName="public" tableName="marcas">
+			<column name="nome" value="Hyundai"></column>
+		</insert>
+		<insert schemaName="public" tableName="marcas">
+			<column name="nome" value="Nissan"></column>
+		</insert>
+		<insert schemaName="public" tableName="marcas">
+			<column name="nome" value="Peugeot"></column>
+		</insert>
+		<insert schemaName="public" tableName="marcas">
+			<column name="nome" value="Renault"></column>
+		</insert>
+		<insert schemaName="public" tableName="marcas">
+			<column name="nome" value="Toyota"></column>
+		</insert>
+		<insert schemaName="public" tableName="marcas">
+			<column name="nome" value="Volkswagen"></column>
+		</insert>
+
+
+
+	</changeSet>
+
+</databaseChangeLog>
