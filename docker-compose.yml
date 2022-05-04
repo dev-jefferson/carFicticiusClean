@@ -1,25 +1,25 @@
 version: "3.5"
 services:
-  api:
-    container_name: carficticiusCleanAPI
-    image: jfhenrique/carficticiusclean-api
-    restart: always
-    build: ./
-    ports:
-      - "8080:8080"
-    links:
-      - postgresqldb
-    depends_on:
-      - postgresqldb
-    environment:
-      - TZ=America/Sao_Paulo
-      - SPRING_BOOT_ENVIRONMENT=develop
-    command: mvn clean spring-boot:run
-    volumes:
-      - ./:/api
-      - ~/.m2:/root/.m2
-    networks:
-      - networkCarFicticiusClean
+#  api:
+#    container_name: carficticiusCleanAPI
+#    image: jfhenrique/carficticiusclean-api
+#    restart: always
+#    build: ./
+#    ports:
+#      - "8080:8080"
+#    links:
+#      - postgresqldb
+#    depends_on:
+#      - postgresqldb
+#    environment:
+#      - TZ=America/Sao_Paulo
+#      - SPRING_BOOT_ENVIRONMENT=develop
+#    command: mvn clean spring-boot:run
+#    volumes:
+#      - ./:/api
+#      - ~/.m2:/root/.m2
+#    networks:
+#      - networkCarFicticiusClean
 
   postgresqldb:
     image: postgres:latest
